@@ -16,6 +16,7 @@ namespace JOR.Entities.Character
 
         public CharacterStats Stats => _stats;
         public CharacterInteractor Interactor => _interactor;
+        public CharacterInventory Inventory => _characterInventory;
 
         private void Awake()
         {

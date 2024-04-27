@@ -10,6 +10,7 @@ namespace JOR.Entities.Character
 
         public event Action<int> OnChangeWealth;
 
+        public int CurrentWealth => _wealth;
         public float CurrentSpeed => _currentSpeed;
 
         public override void Init(CharacterSystem controller)

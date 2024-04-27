@@ -9,7 +9,7 @@ namespace JOR.GameManager
     {
         [SerializeField] private CharacterSystem _playerCharacter;
         [SerializeField] private ConsumablesSpawner _consumablesSpawner;
-        [SerializeField] private UIManager _uiManager;
+        [SerializeField] private ShopManager _shopManager;
 
         private InputController _inpuController;
 
@@ -18,7 +18,7 @@ namespace JOR.GameManager
             _inpuController = new InputController();
             _playerCharacter.Init();
             _consumablesSpawner.Init();
-            _uiManager.Init(_playerCharacter);
+            _shopManager.Init(_playerCharacter);
         }
 
         private void Update()

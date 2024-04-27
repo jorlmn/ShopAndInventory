@@ -5,13 +5,13 @@ namespace JOR.Entities
 {
     public class Vendor : MonoBehaviour
     {
-        private InventoryData _vendorInventory;
+        private InventoryData _inventory;
 
-        public InventoryData VendorInventory => _vendorInventory;
+        public InventoryData Inventory => _inventory;
 
         public void Init(List<ItemData> vendorList)
         {
-            _vendorInventory = new InventoryData(vendorList);
+            _inventory = new InventoryData(vendorList);
         }
     }
 }

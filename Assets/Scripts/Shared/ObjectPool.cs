@@ -9,6 +9,8 @@ namespace JOR.Shared
         protected List<T> _activeItems = new();
         protected Queue<T> _disabledItems = new();
 
+        public List<T> ActiveItems => _activeItems;
+
         public abstract T GetFromPool();
         public abstract void ReturnToPool(T item);
 
