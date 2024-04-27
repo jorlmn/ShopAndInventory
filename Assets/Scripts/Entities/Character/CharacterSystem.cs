@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 
-namespace JOR.Character
+namespace JOR.Entities.Character
 {
     public class CharacterSystem : MonoBehaviour
     {

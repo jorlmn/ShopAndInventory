@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace JOR.Character
+namespace JOR.Entities.Character
 {
     [Serializable]
     public class CharacterStats : CharacterModule

@@ -1,4 +1,5 @@
-using JOR.Character;
+using JOR.Entities.Character;
+using JOR.Entities.Consumables;
 using JOR.Inputs;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ namespace JOR.GameManager
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private CharacterSystem _playerCharacter;
+        [SerializeField] private ConsumablesSpawner _consumablesSpawner;
 
         private InputController _inpuController;
 
@@ -14,6 +16,7 @@ namespace JOR.GameManager
         {
             _inpuController = new InputController();
             _playerCharacter.Init();
+            _consumablesSpawner.Init();
         }
 
         private void Update()
