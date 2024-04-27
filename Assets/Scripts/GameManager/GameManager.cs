@@ -1,5 +1,5 @@
 using JOR.Entities.Character;
-using JOR.Entities.Consumables;
+using JOR.Entities;
 using JOR.Inputs;
 using UnityEngine;
 
@@ -9,6 +9,7 @@ namespace JOR.GameManager
     {
         [SerializeField] private CharacterSystem _playerCharacter;
         [SerializeField] private ConsumablesSpawner _consumablesSpawner;
+        [SerializeField] private UIManager _uiManager;
 
         private InputController _inpuController;
 
@@ -17,6 +18,7 @@ namespace JOR.GameManager
             _inpuController = new InputController();
             _playerCharacter.Init();
             _consumablesSpawner.Init();
+            _uiManager.Init(_playerCharacter);
         }
 
         private void Update()

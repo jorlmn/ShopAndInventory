@@ -1,7 +1,7 @@
 using UnityEngine;
 using JOR.Shared;
 
-namespace JOR.Entities.Consumables
+namespace JOR.Entities
 {
     public class ConsumablesSpawner : MonoBehaviour
     {

@@ -6,9 +6,12 @@ namespace JOR.Inputs
     public class InputController
     {
         public static event Action OnSubmit;
+        public static event Action OnCancel;
         public static event Action<Vector2Int> OnMove;
 
         private const KeyCode SubmitKey = KeyCode.E;
+        private const KeyCode CancelKey = KeyCode.Escape;
+
         private const KeyCode ForwardKey = KeyCode.W;
         private const KeyCode DownKey = KeyCode.S;
         private const KeyCode RightKey = KeyCode.D;
@@ -20,6 +23,9 @@ namespace JOR.Inputs
 
             if (Input.GetKeyDown(SubmitKey))
                 OnSubmit?.Invoke();
+
+            if (Input.GetKeyDown(CancelKey))
+                OnCancel?.Invoke();
         }
 
         private void CheckMovement()

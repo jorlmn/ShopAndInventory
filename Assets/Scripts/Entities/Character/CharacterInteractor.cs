@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using JOR.Shared;
-using JOR.Entities.Consumables;
 
 namespace JOR.Entities.Character
 {
@@ -11,6 +10,7 @@ namespace JOR.Entities.Character
         [SerializeField] private WorldCollider _worldCollider;
 
         public event Action OnConsume;
+        public event Action<Vendor, bool> OnNearVendor;
 
         public override void Init(CharacterSystem controller)
         {
@@ -26,6 +26,11 @@ namespace JOR.Entities.Character
                 OnConsume?.Invoke();
                 _controller.Stats.ChangeWealth(1);
                 return;
+            }
+
+            if (collider.TryGetComponent(out Vendor vendor))
+            {
+                OnNearVendor?.Invoke(vendor, entered);
             }
         }
 
