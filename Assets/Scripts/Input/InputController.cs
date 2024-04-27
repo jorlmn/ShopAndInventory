@@ -1,12 +1,12 @@
 using UnityEngine;
 using System;
 
-namespace JOR.InputManager
+namespace JOR.Inputs
 {
-    public class InputManager
+    public class InputController
     {
-        public event Action OnSubmit;
-        public event Action<Vector2Int> OnMove;
+        public static event Action OnSubmit;
+        public static event Action<Vector2Int> OnMove;
 
         private const KeyCode SubmitKey = KeyCode.E;
         private const KeyCode ForwardKey = KeyCode.W;
