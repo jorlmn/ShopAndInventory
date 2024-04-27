@@ -10,6 +10,8 @@ namespace JOR.Entities.Character
         [SerializeField] private CharacterInteractor _interactor;
         [SerializeField] private CharacterStats _stats;
 
+        private CharacterInventory _characterInventory;
+
         private List<CharacterModule> _characterModules;
 
         public CharacterStats Stats => _stats;
@@ -25,6 +27,8 @@ namespace JOR.Entities.Character
             };
 
             _characterModules.ForEach(m => m.Init(this));
+
+            _characterInventory = new CharacterInventory(null, null, new List<ItemData>());
         }
 
         public void Init() { }
