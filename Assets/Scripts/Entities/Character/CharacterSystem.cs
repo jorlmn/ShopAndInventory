@@ -9,6 +9,7 @@ namespace JOR.Entities.Character
         [SerializeField] private CharacterMovement _movement;
         [SerializeField] private CharacterInteractor _interactor;
         [SerializeField] private CharacterStats _stats;
+        [SerializeField] private CharacterGear _characterGear;
 
         private CharacterInventory _characterInventory;
 
@@ -20,16 +21,17 @@ namespace JOR.Entities.Character
 
         private void Awake()
         {
+            _characterInventory = new CharacterInventory(null, null, new List<ItemData>());
+
             _characterModules = new List<CharacterModule>()
             {
                 _movement,
                 _interactor,
-                _stats
+                _stats,
+                _characterGear
             };
 
             _characterModules.ForEach(m => m.Init(this));
-
-            _characterInventory = new CharacterInventory(null, null, new List<ItemData>());
         }
 
         public void Init() { }
