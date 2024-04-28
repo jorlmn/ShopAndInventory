@@ -78,6 +78,7 @@ namespace JOR.GameManager
 
             _playerCharacter.Stats.ChangeWealth(-costToBuy);
             _playerCharacter.Inventory.AddToInventory(itemToBuy);
+            _nearbyVendor.Inventory.RemoveFromInventory(itemToBuy);
         }
 
         private void TrySellItem(ItemData itemToSell, bool leftClick)
