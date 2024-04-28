@@ -9,7 +9,7 @@ namespace JOR.Entities.Character
         [SerializeField] private CharacterMovement _movement;
         [SerializeField] private CharacterInteractor _interactor;
         [SerializeField] private CharacterStats _stats;
-        [SerializeField] private CharacterGear _characterGear;
+        [SerializeField] private CharacterGear _gear;
 
         private CharacterInventory _characterInventory;
 
@@ -29,7 +29,7 @@ namespace JOR.Entities.Character
                 _movement,
                 _interactor,
                 _stats,
-                _characterGear
+                _gear
             };
 
             _characterModules.ForEach(m => m.Init(this));

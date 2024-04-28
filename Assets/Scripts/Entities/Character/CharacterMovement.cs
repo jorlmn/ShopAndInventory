@@ -8,6 +8,7 @@ namespace JOR.Entities.Character
     public class CharacterMovement : CharacterModule
     {
         [SerializeField] private Rigidbody2D _rigidBody;
+        [SerializeField] private Transform _bodyPivot;
 
         private Vector2 _currentMovement;
         private bool _movementEnabled;
@@ -53,6 +54,15 @@ namespace JOR.Entities.Character
             _currentMovement = new Vector2(movementInput.x * speed, movementInput.y * speed);
         }
 
-        private void SetRigidBodyVelocity(Vector2 velocity) => _rigidBody.velocity = velocity;
+        private void SetRigidBodyVelocity(Vector2 velocity)
+        {
+            _rigidBody.velocity = velocity;
+
+            // Character will face in the general direction of movement
+            Vector3 newScale = Vector3.one;
+            newScale.x = velocity.x < 0 ? -1 : 1;
+
+            _bodyPivot.transform.localScale = newScale;
+        }
     }
 }
