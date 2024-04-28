@@ -16,7 +16,7 @@ namespace JOR.Entities.Character
         public override void Init(CharacterSystem controller)
         {
             base.Init(controller);
-            _currentSpeed = 2;
+            _currentSpeed = 8;
         }
 
         public void ChangeWealth(int value)

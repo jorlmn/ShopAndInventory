@@ -73,7 +73,7 @@ namespace JOR.GameManager
                 return;
 
             int costToBuy = itemToBuy.ItemProperties.Cost;
-            if (costToBuy >= _playerCharacter.Stats.CurrentWealth)
+            if (costToBuy > _playerCharacter.Stats.CurrentWealth)
                 return;
 
             _playerCharacter.Stats.ChangeWealth(-costToBuy);
