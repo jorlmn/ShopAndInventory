@@ -51,12 +51,15 @@ namespace JOR.Entities.Character
                 return;
 
             float speed = _controller.Stats.CurrentSpeed;
-            _currentMovement = new Vector2(movementInput.x * speed, movementInput.y * speed);
+            _currentMovement = Vector2.ClampMagnitude(new Vector2(movementInput.x, movementInput.y), 1f) * speed;
         }
 
         private void SetRigidBodyVelocity(Vector2 velocity)
         {
             _rigidBody.velocity = velocity;
+
+            if (velocity.x == 0)
+                return;
 
             // Character will face in the general direction of movement
             Vector3 newScale = Vector3.one;
