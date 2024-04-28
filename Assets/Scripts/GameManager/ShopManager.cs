@@ -72,7 +72,7 @@ namespace JOR.GameManager
             if (!leftClick)
                 return;
 
-            int costToBuy = itemToBuy.ItemProperties.Cost;
+            int costToBuy = itemToBuy.Data.Cost;
             if (costToBuy > _playerCharacter.Stats.CurrentWealth)
                 return;
 
@@ -86,7 +86,7 @@ namespace JOR.GameManager
             if (!leftClick)
                 return;
 
-            _playerCharacter.Stats.ChangeWealth(itemToSell.ItemProperties.Cost);
+            _playerCharacter.Stats.ChangeWealth(itemToSell.Data.Cost);
             _playerCharacter.Inventory.RemoveFromInventory(itemToSell);
             _nearbyVendor.Inventory.AddToInventory(itemToSell);
         }

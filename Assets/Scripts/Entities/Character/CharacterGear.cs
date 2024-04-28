@@ -9,12 +9,17 @@ namespace JOR.Entities.Character
         [SerializeField] private SpriteRenderer _headGear;
         [SerializeField] private SpriteRenderer _bodyGear;
 
+        [Header("Default Appearance")]
+        [SerializeField] private Sprite _defaultHead;
+        [SerializeField] private Sprite _defaultBody;
+
         private CharacterInventory Inventory => _controller.Inventory;
 
         public override void Init(CharacterSystem controller)
         {
             base.Init(controller);
             Inventory.OnUpdateGear += RefreshGear;
+            RefreshGear();
         }
 
         public override void Dispose()
@@ -25,8 +30,8 @@ namespace JOR.Entities.Character
 
         private void RefreshGear()
         {
-            _headGear.sprite = Inventory.HeadGear?.ItemProperties.Icon;
-            _bodyGear.sprite = Inventory.BodyGear?.ItemProperties.Icon;
+            _headGear.sprite = Inventory.HeadGear == null ? _defaultHead : Inventory.HeadGear.Data.Icon;
+            _bodyGear.sprite = Inventory.BodyGear == null ? _defaultBody : Inventory.BodyGear.Data.Icon;
         }
     }
 }

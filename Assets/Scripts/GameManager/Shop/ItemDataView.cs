@@ -12,7 +12,7 @@ namespace JOR.GameManager
         public override void Populate(ItemData data)
         {
             _itemIcon.gameObject.SetActive(true);
-            _itemIcon.sprite = data.ItemProperties.Icon;
+            _itemIcon.sprite = data.Data.Icon;
             base.Populate(data);
         }
 

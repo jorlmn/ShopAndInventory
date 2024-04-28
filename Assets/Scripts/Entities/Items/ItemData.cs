@@ -2,8 +2,8 @@
 {
     public class ItemData
     { 
-        public ItemSO ItemProperties { get; }
+        public ItemSO Data { get; }
 
-        public ItemData(ItemSO itemSO) => ItemProperties = itemSO;
+        public ItemData(ItemSO itemSO) => Data = itemSO;
     }
 }

@@ -21,6 +21,9 @@ namespace JOR.Entities.Character
 
         public void EquipHeadGear(ItemData item)
         {
+            if (_headGear != null)
+                UnequipHeadGear();
+
             RemoveFromInventory(item);
             _headGear = item;
 
@@ -29,6 +32,9 @@ namespace JOR.Entities.Character
 
         public void EquipBodyGear(ItemData item)
         {
+            if (_bodyGear != null)
+                UnequipBodyGear();
+
             RemoveFromInventory(item);
             _bodyGear = item;
 

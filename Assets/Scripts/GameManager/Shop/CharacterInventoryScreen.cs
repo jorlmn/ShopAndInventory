@@ -97,7 +97,7 @@ namespace JOR.GameManager
                 return;
             }
 
-            if (data.ItemProperties.ItemType == ItemType.Head)
+            if (data.Data.ItemType == ItemType.Head)
             {
                 _characterInventory.EquipHeadGear(data);
             }

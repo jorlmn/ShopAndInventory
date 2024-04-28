@@ -103,7 +103,7 @@ namespace JOR.UI
             }
         }
 
-        public virtual void Dispose() { }
+        public virtual void Dispose() { Content = null; }
 
         protected virtual void SubmitLeftClick() { }
         protected virtual void SubmitRightClick() { }
