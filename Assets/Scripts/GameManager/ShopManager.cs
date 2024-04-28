@@ -27,12 +27,14 @@ namespace JOR.GameManager
             _vendorInventoryScreen.OnSubmit += TryBuyItem;
 
             InputController.OnSubmit += TryOpenShop;
+            InputController.OnToggleInventory += ToggleInventory;
             InputController.OnCancel += TryCloseShop;
         }
 
         public void Dispose()
         {
             InputController.OnSubmit -= TryOpenShop;
+            InputController.OnToggleInventory -= ToggleInventory;
             InputController.OnCancel -= TryCloseShop;
         }
 
@@ -84,6 +86,17 @@ namespace JOR.GameManager
             _playerCharacter.Stats.ChangeWealth(itemToSell.ItemProperties.Cost);
             _playerCharacter.Inventory.RemoveFromInventory(itemToSell);
             _nearbyVendor.Inventory.AddToInventory(itemToSell);
+        }
+
+        private void ToggleInventory()
+        {
+            if (_characterInventoryScreen.IsOpen)
+            {
+                _characterInventoryScreen.Close();
+                return;
+            }
+
+            _characterInventoryScreen.Open(_playerCharacter);
         }
 
         private void ApproachingVendor(Vendor vendor, bool isApproaching)
