@@ -236,7 +236,7 @@ PrefabInstance:
     - target: {fileID: 9111462597708393862, guid: bc3b18d4e0c7f9346bb1423a4aa01967, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9032028849321484893}
     - target: {fileID: 9111462597708393862, guid: bc3b18d4e0c7f9346bb1423a4aa01967, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -247,7 +247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9111462597708393862, guid: bc3b18d4e0c7f9346bb1423a4aa01967, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: JOR.GameManager.CharacterInventoryScreen, Assembly-CSharp
+      value: JOR.GameManager.InventoryScreen, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9111462597708393862, guid: bc3b18d4e0c7f9346bb1423a4aa01967, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

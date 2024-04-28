@@ -15,6 +15,7 @@ namespace JOR.Entities.Character
 
         private List<CharacterModule> _characterModules;
 
+        public CharacterMovement Movement => _movement;
         public CharacterStats Stats => _stats;
         public CharacterInteractor Interactor => _interactor;
         public CharacterInventory Inventory => _characterInventory;

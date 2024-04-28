@@ -26,6 +26,7 @@ namespace JOR.GameManager
             _headGearView.OnSubmit = SubmitOnHeadGear;
             _bodyGearView.OnSubmit = SubmitOnBodyGear;
 
+            UpdateWealth(character.Stats.CurrentWealth);
             UpdateGears();
             base.Open(_characterInventory);
         }

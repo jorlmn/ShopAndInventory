@@ -26,6 +26,8 @@ namespace JOR.GameManager
             _characterInventoryScreen.OnSubmit += TrySellItem;
             _vendorInventoryScreen.OnSubmit += TryBuyItem;
 
+            _vendorInventoryScreen.OnToggle += ToggleVendorInventory;
+
             InputController.OnSubmit += TryOpenShop;
             InputController.OnToggleInventory += ToggleInventory;
             InputController.OnCancel += TryCloseShop;
@@ -97,6 +99,12 @@ namespace JOR.GameManager
             }
 
             _characterInventoryScreen.Open(_playerCharacter);
+        }
+
+        private void ToggleVendorInventory(bool enabled)
+        {
+            _playerCharacter.Movement.ToggleMovement(!enabled);
+            _interactionPrompt.SetActive(!enabled && _nearbyVendor != null);
         }
 
         private void ApproachingVendor(Vendor vendor, bool isApproaching)

@@ -14,6 +14,8 @@ namespace JOR.GameManager
 
         public event Action<ItemData, bool> OnSubmit;
 
+        public event Action<bool> OnToggle;
+
         public bool IsOpen { get; private set; }
 
         public virtual void Init()
@@ -30,6 +32,7 @@ namespace JOR.GameManager
 
             _inventoryPanel.SetActive(true);
             _currentInspectedInventory.OnUpdateInventory += RefreshInventory;
+            OnToggle?.Invoke(true);
         }
 
         public virtual void Close()
@@ -40,6 +43,7 @@ namespace JOR.GameManager
 
             _currentInspectedInventory.OnUpdateInventory -= RefreshInventory;
             _currentInspectedInventory = null;
+            OnToggle?.Invoke(false);
         }
 
         protected virtual void OnSubmitView(ItemData data, bool leftClick) => OnSubmit?.Invoke(data, leftClick);
