@@ -83,7 +83,7 @@ namespace JOR.GameManager
 
         private void TrySellItem(ItemData itemToSell, bool leftClick)
         {
-            if (!leftClick)
+            if (!leftClick || !_vendorInventoryScreen.IsOpen)
                 return;
 
             _playerCharacter.Stats.ChangeWealth(itemToSell.Data.Cost);
