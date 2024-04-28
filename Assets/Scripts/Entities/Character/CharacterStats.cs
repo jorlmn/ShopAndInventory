@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JOR.Settings;
+using System;
 
 namespace JOR.Entities.Character
 {
@@ -16,7 +17,8 @@ namespace JOR.Entities.Character
         public override void Init(CharacterSystem controller)
         {
             base.Init(controller);
-            _currentSpeed = 8;
+            _currentSpeed = GameConfig.PlayerDefaultSpeed;
+            _wealth = GameConfig.PlayerStartingWealth;
         }
 
         public void ChangeWealth(int value)

@@ -20,7 +20,7 @@ namespace JOR.Entities.Character
         public CharacterInteractor Interactor => _interactor;
         public CharacterInventory Inventory => _characterInventory;
 
-        private void Awake()
+        public void Init()
         {
             _characterInventory = new CharacterInventory(null, null, new List<ItemData>());
 
@@ -34,8 +34,6 @@ namespace JOR.Entities.Character
 
             _characterModules.ForEach(m => m.Init(this));
         }
-
-        public void Init() { }
 
         private void Update() => _characterModules.ForEach(m => m.Update());
         private void FixedUpdate() => _characterModules.ForEach(m => m.FixedUpdate());

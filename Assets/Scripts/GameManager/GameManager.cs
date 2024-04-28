@@ -2,6 +2,7 @@ using JOR.Entities.Character;
 using JOR.Entities;
 using JOR.Inputs;
 using UnityEngine;
+using JOR.Settings;
 
 namespace JOR.GameManager
 {
@@ -12,11 +13,13 @@ namespace JOR.GameManager
         [SerializeField] private ShopManager _shopManager;
         [SerializeField] private DataModelCollection _dataModelCollection;
         [SerializeField] private Vendor _vendor;
+        [SerializeField] private GameConfig _gameConfig;
 
         private InputController _inpuController;
 
-        private void Start()
+        private void Awake()
         {
+            _gameConfig.Init();
             _inpuController = new InputController();
             _dataModelCollection.Init();
             _playerCharacter.Init();
