@@ -32,5 +32,7 @@ namespace JOR.GameManager
         {
             _inpuController.Update();
         }
+
+        public void OnSubmitQuit() => Application.Quit();
     }
 }
