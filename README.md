@@ -11,3 +11,4 @@ A small prototype for a shop and inventory system in a 2D game. Buy and sell ite
 - I to open Inventory.
 - E to interact with shop.
 - Esc to cancel.
+- Left Click on item to buy/sell. Right click on item to equip/unequip.
